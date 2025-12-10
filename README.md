@@ -20,7 +20,7 @@ A fast, lightweight embedding service built with Rust that provides OpenAI-compa
 
 ```bash
 # Clone the repository
-git clone <repository-url>
+git clone https://github.com/alkimiadev/embedding_service.git
 cd embedding_service
 
 # Build the project
