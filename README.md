@@ -59,12 +59,6 @@ Generate embeddings for input text(s).
 
 List available embedding models (OpenAI API compatibility).
 
-### Health Check
-
-**GET** `/health`
-
-Returns "OK" if service is running. No authentication required.
-
 #### Request Body
 
 ```json
@@ -124,28 +118,7 @@ Returns "OK" if the service is running.
 | Max Request Size | | `--max-request-size-mb` | `8` | Request body size limit (MB) |
 | Normalize Embeddings | | `--normalize-embeddings` | `false` | Whether to normalize embeddings |
 
-### Examples
 
-```bash
-# Basic usage
-./target/release/embedding_service --host 0.0.0.0 --port 8080
-
-# With authentication and CORS restrictions
-./target/release/embedding_service \
-  --auth-key your-secret-key \
-  --cors-origins "https://example.com,https://app.example.com" \
-  --cors-allow-credentials
-
-# Production settings with limits
-./target/release/embedding_service \
-  --max-batch-size 50 \
-  --max-input-length 4096 \
-  --max-request-size-mb 4 \
-  --normalize-embeddings
-
-# Custom model
-./target/release/embedding_service --model-path /path/to/local/model
-```
 
 ## Authentication
 
@@ -158,7 +131,7 @@ curl -X POST http://localhost:8080/v1/embeddings \
   -d '{"input": "Hello, world!"}'
 ```
 
-## Example Usage with curl
+## Example Usage
 
 ```bash
 # Basic embedding request
@@ -236,40 +209,12 @@ Licensed under either of:
 
 at your option.
 
-## 🤖 Attribution & Development Process
+## 🤖 Attribution
 
-This project was created through a collaborative AI-assisted development process:
+This project was developed through an AI-assisted process:
 
-### **Initial Development**
 - **Conception & Direction**: @alkimiadev
-- **Initial Implementation**: GLM-4.6 (via z.ai interface)
-- **Base Architecture**: OpenAI-compatible embeddings API using model2vec-rs
+- **Implementation**: AI-assisted development using multiple coding agents
+- **Focus**: Production-ready embedding service with security and performance optimizations
 
-### **Production Refactoring**
-- **Security & Performance**: GLM-4.6 (via opencode cli interface)
-- **Code Review Analysis**: 4 advanced AI coding agents via OpenRouter(Claude Sonnet 4.5, Gemini 2.5 pro, Grok Code Fast 1, GPT 5)
-- **Critical Improvements**: 
-  - Security vulnerabilities (timing attacks, auth bypass)
-  - Performance optimizations (async runtime, blocking operations)
-  - Production readiness (error handling, logging, testing)
-  - API compatibility enhancements
-
-### **Development Methodology**
-This project demonstrates modern AI-assisted development:
-1. **Rapid Prototyping**: Initial working version in single session
-2. **Multi-Agent Review**: Comprehensive security and architecture analysis
-3. **Iterative Improvement**: Systematic addressing of all identified issues
-4. **Production Hardening**: Security, performance, and reliability focus
-
-### **Human Oversight**
-All AI contributions were directed, reviewed, and validated by human oversight to ensure:
-- Alignment with project goals
-- Security best practices
-- Production readiness standards
-- Ethical development practices
-
-### **Development Efficiency**
-- **Traditional Timeline**: ~2 weeks solo development
-- **AI-Assisted Timeline**: ~2 hours total
-- **Cost**: $0 (existing AI coding plans)
-- **Result**: Production-ready service with comprehensive security and performance optimizations
+The development demonstrates modern AI-assisted workflows, achieving production readiness in hours rather than weeks through iterative improvement and multi-agent review.
