@@ -178,7 +178,7 @@ src/
 ## Dependencies
 
 - **axum**: Web framework
-- **model2vec-rs**: Embedding model inference with accurate token counting
+- **model2vec-rs**: Embedding model inference with accurate token counting ([custom fork](https://github.com/alkimiadev/model2vec-rs/tree/feature/encode-with-stats))
 - **tokio**: Async runtime
 - **clap**: Command-line argument parsing
 - **serde**: Serialization/deserialization

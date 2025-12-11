@@ -1393,6 +1393,7 @@ dependencies = [
 [[package]]
 name = "model2vec-rs"
 version = "0.1.4"
+source = "git+https://github.com/alkimiadev/model2vec-rs?branch=feature%2Fencode-with-stats#b11789059d7ba46957af98c311665304932cd752"
 dependencies = [
  "anyhow",
  "clap",
