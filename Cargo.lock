@@ -1393,8 +1393,6 @@ dependencies = [
 [[package]]
 name = "model2vec-rs"
 version = "0.1.4"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "23693c16304bc11674c991f47aa33794e641204e67547e0cef31c794c38ea00f"
 dependencies = [
  "anyhow",
  "clap",

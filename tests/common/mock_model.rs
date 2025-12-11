@@ -1,4 +1,5 @@
 use embedding_service::handlers::EmbeddingModel;
+use model2vec_rs::model::EncodeResult;
 
 pub struct MockModel;
 
@@ -20,10 +21,21 @@ impl MockModel {
 }
 
 impl EmbeddingModel for MockModel {
-    fn encode(&self, texts: &[String]) -> Vec<Vec<f32>> {
-        texts
+    fn encode_with_stats(&self, texts: &[String]) -> EncodeResult {
+        let embeddings: Vec<Vec<f32>> = texts
             .iter()
             .map(|text| self.generate_embedding(text))
-            .collect()
+            .collect();
+        
+        // Mock token counting - simple word-based for testing
+        let token_counts: Vec<usize> = texts
+            .iter()
+            .map(|text| text.split_whitespace().count())
+            .collect();
+        
+        EncodeResult {
+            embeddings,
+            token_counts,
+        }
     }
 }

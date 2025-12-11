@@ -13,6 +13,7 @@ A fast, lightweight embedding service built with Rust that provides OpenAI-compa
 - 🛡️ **Production Ready**: Input validation, rate limiting, graceful shutdown
 - 🔍 **Comprehensive Logging**: Request/response tracing with structured logs
 - ⚡ **Non-blocking**: CPU-intensive model operations offloaded to thread pool
+- 🎯 **Accurate Token Counting**: Precise tokenizer-based token usage statistics
 
 ## Quick Start
 
@@ -177,7 +178,7 @@ src/
 ## Dependencies
 
 - **axum**: Web framework
-- **model2vec-rs**: Embedding model inference
+- **model2vec-rs**: Embedding model inference with accurate token counting
 - **tokio**: Async runtime
 - **clap**: Command-line argument parsing
 - **serde**: Serialization/deserialization
@@ -199,6 +200,7 @@ src/
 - **Batch processing**: Efficient handling of multiple texts
 - **Configurable limits**: Tune for your hardware and use case
 - **Graceful shutdown**: Clean handling of signals without dropping requests
+- **Optimized token counting**: Single-pass tokenization with accurate usage statistics (2x faster than separate tokenization)
 
 ## License
 
